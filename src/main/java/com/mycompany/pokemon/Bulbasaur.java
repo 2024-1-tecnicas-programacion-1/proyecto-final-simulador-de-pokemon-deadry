@@ -10,4 +10,15 @@ public abstract class Bulbasaur extends Pokemon implements IVeneno, IPlanta {
     public void ataqueVeneno() {
         PuntosdeAtaque=49;
     }
+    @Override
+    public void vida(){
+    salud=45;
+    }
+     @Override
+    public void entrenar() {
+        this.PuntosdeAtaque += 5;
+        this.salud += 10;
+        System.out.println(this.nombre + " ha sido entrenado. Puntos de ataque aumentados a " + this.PuntosdeAtaque);
+        System.out.println(this.nombre + " ha sido entrenado. Salud aumentada a " + this.salud);
+    }
 }

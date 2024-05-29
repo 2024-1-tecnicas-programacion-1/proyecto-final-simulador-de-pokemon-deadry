@@ -1,9 +1,11 @@
 package com.mycompany.pokemon;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
-
+   private static List<Entrenador> entrenadores = new ArrayList<>();
+   private static List<Pokemon> pokemones = new ArrayList<>();
     public static void main(String[] args) {
          Scanner sc = new Scanner(System.in);
         int opcion;
@@ -30,15 +32,13 @@ public class Principal {
                     iniciarBatalla(sc);
                     break;
                 case 4:
-                    System.out.println("Saliendo del programa...");
+                    System.out.println("Saliendo UPoke...");
                     break;
                 default:
                     System.out.println("Usted ingresó una opción inválida");
             }
 
         } while (opcion != 4);
-
-        sc.close();
     }
 
     public static void gestionarEntrenadores(Scanner sc) {
@@ -53,16 +53,21 @@ public class Principal {
 
             switch (opcionEntrenador) {
                 case 1:
-                    // agregar para registrar un nuevo entrenador
-                    System.out.println("Registrar un nuevo entrenador");
+                    System.out.println("Ingrese el nombre del nuevo entrenador:");
+                    String nombre = sc.next();
+                    entrenadores.add(new Entrenador(nombre));
+                    System.out.println("Entrenador " + nombre + " registrado exitosamente.");
                     break;
                 case 2:
-                    // agregar para ver lista de entrenadores
-                    System.out.println("Ver lista de entrenadores");
+                     for (Entrenador entrenador : entrenadores) {
+                        System.out.println(entrenador.getNombre());
+                    }
                     break;
                 case 3:
-                    // agregar para seleccionar un entrenador
-                    System.out.println("Seleccionar un entrenador");
+                    System.out.print("Ingrese el nombre del entrenador: ");
+                    sc.nextLine(); 
+                    String nombreEntrenador = sc.nextLine();
+                    Entrenador entrenadorSeleccionado = buscarEntrenador(nombreEntrenador);                   
                     break;
                 case 4:
                     System.out.println("Volviendo al menú principal...");
@@ -85,12 +90,18 @@ public class Principal {
 
             switch (opcionPokemones) {
                 case 1:
-                    // agregar para ver todos los pokemones registrados
-                    System.out.println("Ver todos los pokemones registrados");
+                     for (Pokemon pokemon : pokemones) {
+                        System.out.println(pokemon);
+                    }
                     break;
                 case 2:
-                    // agregar para registrar un pokémon
-                    System.out.println("Registrar pokémon");
+                    System.out.print("Ingrese el nombre del pokémon: ");
+                    sc.nextLine(); // Consume newline
+                    String nombrePokemon = sc.nextLine();
+                    System.out.print("Ingrese el nivel del pokémon: ");
+                    int nivel = sc.nextInt();
+                    pokemones.add(new Pokemon(nombrePokemon, nivel));
+                    System.out.println("Pokémon registrado exitosamente.");
                     break;
                 case 3:
                     System.out.println("Volviendo al menú principal...");
@@ -172,5 +183,14 @@ public class Principal {
             }
 
         } while (opcionAccion != 3);
+    }
+    
+    private static Entrenador buscarEntrenador(String nombre) {
+        for (Entrenador entrenador : entrenadores) {
+            if (entrenador.getNombre().equalsIgnoreCase(nombre)) {
+                return entrenador;
+            }
+        }
+        return null;
     }
 }

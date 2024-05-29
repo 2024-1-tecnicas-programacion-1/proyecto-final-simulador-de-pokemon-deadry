@@ -18,6 +18,7 @@ public abstract class Pokemon {
         this.tipo = tipo;
         this.estado = estado;
     }
+    
     public void atacar (Pokemon oponente){
         if (this.estado == Estado.NORMAL && oponente.estado == Estado.NORMAL){
             oponente.recibirDaño(this.PuntosdeAtaque);
@@ -37,10 +38,15 @@ public abstract class Pokemon {
             this.estado = Estado.DEBILITADO;
             System.out.println(this.nombre + "ha sido debilitado");
         }
+        
     }
-    public void entrenar(){
-    
+   public void entrenar() {
+        this.PuntosdeAtaque += 5;
+        this.salud += 10;
+        System.out.println(this.nombre + " ha sido entrenado. Puntos de ataque aumentados a " + this.PuntosdeAtaque);
+        System.out.println(this.nombre + " ha sido entrenado. Salud aumentada a " + this.salud);
     }
+
     
     public String getNombre() {
         return nombre;
