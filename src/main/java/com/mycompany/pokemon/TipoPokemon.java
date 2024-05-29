@@ -19,6 +19,7 @@ public enum TipoPokemon implements Serializable{
     };
     
     public static int obtenerMultiplicadorDeDano (TipoPokemon atacante, TipoPokemon defensor){
+        
         return tablaDeDano[atacante.ordinal()][defensor.ordinal()];
     }
     
