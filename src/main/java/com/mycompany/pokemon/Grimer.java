@@ -9,28 +9,6 @@ public class Grimer extends Pokemon implements IVeneno{
     }
 
     @Override
-    public void lodoBom() {
-
+    public void ataqueVeneno(){    
     }
-
-    @Override
-    public void puyaNociva() {
-
-    }
-
-    @Override
-    public void colaVeneno() {
-
-    }
-
-    @Override
-    public void lanzaMugre() {
-
-    }
-
-    @Override
-    public void acido() {
-
-    }
-    
 }

@@ -9,28 +9,7 @@ public class Machop extends Pokemon implements ILucha{
     }
 
     @Override
-    public void golpeKarate() {
-
-    }
-
-    @Override
-    public void punioDinamico() {
-
-    }
-
-    @Override
-    public void ondaVacio() {
-
-    }
-
-    @Override
-    public void golpeRoca() {
-
-    }
-
-    @Override
-    public void golpeBajo() {
-
-    }
+    public void ataqueLucha(){
     
+    }
 }

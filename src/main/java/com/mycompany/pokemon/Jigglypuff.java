@@ -9,28 +9,7 @@ public class Jigglypuff extends Pokemon implements IHada{
     }
 
     @Override
-    public void carantonia() {
+    public void ataqueHada() {
  
-    }
-
-    @Override
-    public void veloDulce() {
- 
-    }
-
-    @Override
-    public void desarme() {
- 
-    }
-
-    @Override
-    public void besoDeAmor() {
- 
-    }
-
-    @Override
-    public void juegoRudo() {
- 
-    }
-    
+    }   
 }

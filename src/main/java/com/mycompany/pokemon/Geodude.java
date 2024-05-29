@@ -7,28 +7,7 @@ public class Geodude extends Pokemon implements ITierra{
     }
 
     @Override
-    public void terremoto() {
+    public void ataqueTierra() {
         
     }
-
-    @Override
-    public void terraTemblor() {
-      
-    }
-
-    @Override
-    public void tierraViva() {
-      
-    }
-
-    @Override
-    public void Excavar() {
-      
-    }
-
-    @Override
-    public void bucleArena() {
-      
-    }
-    
 }

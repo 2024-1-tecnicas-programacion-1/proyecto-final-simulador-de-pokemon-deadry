@@ -9,28 +9,7 @@ public class Pidgey extends Pokemon implements IVolador{
     }
 
     @Override
-    public void vuelo() {
+    public void ataqueVolador() {
      
     }
-
-    @Override
-    public void pajaroOsado() {
-     
-    }
-
-    @Override
-    public void alaDeAcero() {
-      
-    }
-
-    @Override
-    public void golpeAereo() {
-
-    }
-
-    @Override
-    public void danzaPajaro() {
-
-    }
-    
 }
