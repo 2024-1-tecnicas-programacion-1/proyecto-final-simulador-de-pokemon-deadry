@@ -10,6 +10,11 @@ public class Jigglypuff extends Pokemon implements IHada{
 
     @Override
     public void ataqueHada() {
- 
-    }   
+    PuntosdeAtaque = 45;
+    }
+    
+    @Override
+    public void vida() {
+    salud = 115;   
+    }
 }

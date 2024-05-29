@@ -8,6 +8,12 @@ public class Geodude extends Pokemon implements ITierra{
 
     @Override
     public void ataqueTierra() {
-        
+    PuntosdeAtaque = 80;
+   
+    }
+    
+    @Override
+    public void vida() {
+    salud = 40;
     }
 }

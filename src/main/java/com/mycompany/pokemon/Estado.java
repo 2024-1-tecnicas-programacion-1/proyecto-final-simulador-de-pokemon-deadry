@@ -6,5 +6,5 @@ import java.io.Serializable;
 
 public enum Estado implements Serializable{
     NORMAL, DEBILITADO, FORTALECIDO, ENVENENADO, PARALIZADO, DORMIDO, CONGELADO, QUEMADO, CONFUNDIDO, ATRAPADO, INFATUADO, CEGADO, CLAUSURADO, TORMENTADO;
-    
+    //Acá falta detallar código para saber cuando esta normal, debilitado, fortalecido, etc. 
 }

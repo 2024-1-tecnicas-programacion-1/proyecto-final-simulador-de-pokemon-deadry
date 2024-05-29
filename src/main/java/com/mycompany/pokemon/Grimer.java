@@ -10,5 +10,11 @@ public class Grimer extends Pokemon implements IVeneno{
 
     @Override
     public void ataqueVeneno(){    
+    PuntosdeAtaque = 80;
+    }
+    
+    @Override
+    public void vida() {
+    salud = 80;  
     }
 }

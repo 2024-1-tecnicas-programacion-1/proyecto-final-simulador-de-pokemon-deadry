@@ -10,6 +10,11 @@ public class Machop extends Pokemon implements ILucha{
 
     @Override
     public void ataqueLucha(){
+    PuntosdeAtaque = 80;
+    }
     
+    @Override
+    public void vida() {
+    salud = 70;   
     }
 }

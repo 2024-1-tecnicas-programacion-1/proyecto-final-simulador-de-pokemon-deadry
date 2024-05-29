@@ -10,6 +10,11 @@ public class Pidgey extends Pokemon implements IVolador{
 
     @Override
     public void ataqueVolador() {
-     
+    PuntosdeAtaque = 45;
+    }
+    
+    @Override
+    public void vida() {
+    salud = 40;   
     }
 }
