@@ -46,9 +46,10 @@ public abstract class Pokemon {
         System.out.println(this.nombre + " ha sido entrenado. Puntos de ataque aumentados a " + this.PuntosdeAtaque);
         System.out.println(this.nombre + " ha sido entrenado. Salud aumentada a " + this.salud);
     }
-   /*public void restaurarSaludInicial() {
-        this.salud = salud;
-    }*/
+   public void resetearPokemon(Pokemon pokemon) {
+        pokemon.setSalud(pokemon.getSalud());
+        pokemon.setEstado(Estado.NORMAL);
+    }   
 
     
     public String getNombre() {
@@ -69,5 +70,17 @@ public abstract class Pokemon {
 
     public Estado getEstado() {
         return estado;
+    }
+
+    Estado estado() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void setEstado(Estado estado) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void setSalud(int salud) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
