@@ -46,6 +46,9 @@ public abstract class Pokemon {
         System.out.println(this.nombre + " ha sido entrenado. Puntos de ataque aumentados a " + this.PuntosdeAtaque);
         System.out.println(this.nombre + " ha sido entrenado. Salud aumentada a " + this.salud);
     }
+   /*public void restaurarSaludInicial() {
+        this.salud = salud;
+    }*/
 
     
     public String getNombre() {

@@ -31,6 +31,11 @@ public class Batalla {
     }
 
     private void realizarAtaque(Pokemon atacante, Pokemon defensor) {
+        if (atacante.getEstado() == Estado.DEBILITADO || defensor.getEstado() == Estado.DEBILITADO) {
+        atacante.getSalud();
+        System.out.println(atacante.getNombre() + " ha sido rehabilitado y su salud ha sido restaurada a su estado inicial.");
+        return; // Salir del método después de restaurar la salud
+    }
         if (atacante.getEstado() == Estado.NORMAL && defensor.getEstado() == Estado.NORMAL) {
             int multiplicador = TipoPokemon.obtenerMultiplicadorDeDano(atacante.getTipo(), defensor.getTipo());
             int danio = (atacante.getPuntosDeAtaque() * multiplicador);
