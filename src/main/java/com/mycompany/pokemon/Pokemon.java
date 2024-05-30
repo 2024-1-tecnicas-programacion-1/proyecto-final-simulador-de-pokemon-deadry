@@ -7,6 +7,7 @@ public abstract class Pokemon {
 
     protected String nombre;
     protected int salud;
+    protected int saludInicial;
     protected int PuntosdeAtaque;
     protected TipoPokemon tipo;
     protected Estado estado;
@@ -17,6 +18,7 @@ public abstract class Pokemon {
         this.PuntosdeAtaque = PuntosdeAtaque;
         this.tipo = tipo;
         this.estado = estado;
+        this.saludInicial=salud;
     }
     
     public void atacar (Pokemon oponente){
@@ -46,12 +48,10 @@ public abstract class Pokemon {
         System.out.println(this.nombre + " ha sido entrenado. Puntos de ataque aumentados a " + this.PuntosdeAtaque);
         System.out.println(this.nombre + " ha sido entrenado. Salud aumentada a " + this.salud);
     }
-   public void resetearPokemon(Pokemon pokemon) {
-        pokemon.setSalud(pokemon.getSalud());
-        pokemon.setEstado(Estado.NORMAL);
-    }   
-
-    
+   
+    public int getsaludInicial (){
+    return saludInicial;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -72,15 +72,11 @@ public abstract class Pokemon {
         return estado;
     }
 
-    Estado estado() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 
-    void setEstado(Estado estado) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setSalud(int salud) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setSalud(int salud) {
+        this.salud = salud;
     }
 }
