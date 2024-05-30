@@ -13,9 +13,9 @@ public class Principal {
         int opcion;
 
         do {
-            System.out.println("**/////////////////////**");
+            System.out.println("//////////////////////////////////////////////////");
             System.out.println("///Bienvenido a UPoke///");
-            System.out.println("**/////////////////////**");
+            System.out.println("//////////////////////////////////////////////////");
             System.out.println("Ingrese alguna de las siguientes opciones:");
             System.out.println("1) Gestionar entrenadores");
             System.out.println("2) Pokemones disponibles");
@@ -46,6 +46,7 @@ public class Principal {
     public static void gestionarEntrenadores(Scanner sc) {
         int opcionEntrenador;
         do {
+            System.out.println("//////////////////////////////////////////////////");
             System.out.println("Seleccione una de las siguientes opciones:");
             System.out.println("1) Registrar un nuevo entrenador");
             System.out.println("2) Ver lista de entrenadores");
@@ -74,6 +75,7 @@ public class Principal {
                     if (entrenadorSeleccionado != null) {
                         int opcionEquipo;
                         do {
+                            System.out.println("//////////////////////////////////////////////////");
                             System.out.println("Seleccione una de las siguientes opciones:");
                             System.out.println("1) Ver equipo de pokémones");
                             System.out.println("2) Agregar pokémon al equipo");
@@ -186,6 +188,7 @@ public class Principal {
         
         int opcionPokemones;
     do {
+        System.out.println("//////////////////////////////////////////////////");
         System.out.println("Seleccione una de las siguientes opciones:");
         System.out.println("1) Ver todos los pokemones disponibles");
         System.out.println("2) Volver al menú principal");
@@ -221,6 +224,7 @@ public class Principal {
         Pokemon pokemon1 = null;
         Pokemon pokemon2 = null;
         do {
+            System.out.println("//////////////////////////////////////////////////");
             System.out.println("Seleccione una de las siguientes opciones:");
             System.out.println("1) Elegir entrenador 1");
             System.out.println("2) Elegir entrenador 2");
@@ -233,7 +237,7 @@ public class Principal {
             switch (opcionBatalla) {
                 case 1:
                     System.out.println("Ingrese el nombre del primer entrenador:");
-                    sc.nextLine(); // Consume el salto de línea
+                    sc.nextLine(); 
                     String nombreEntrenador1 = sc.nextLine();
                     entrenador1 = buscarEntrenador(nombreEntrenador1);
                     if (entrenador1 == null) {
@@ -242,7 +246,7 @@ public class Principal {
                     break;
                 case 2:
                     System.out.println("Ingrese el nombre del segundo entrenador:");
-                    sc.nextLine(); // Consume el salto de línea
+                    sc.nextLine(); 
                     String nombreEntrenador2 = sc.nextLine();
                     entrenador2 = buscarEntrenador(nombreEntrenador2);
                     if (entrenador2 == null) {
