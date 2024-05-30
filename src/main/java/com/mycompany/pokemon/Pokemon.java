@@ -68,6 +68,3 @@ public abstract class Pokemon {
         return estado;
     }
 }
-        
-
-

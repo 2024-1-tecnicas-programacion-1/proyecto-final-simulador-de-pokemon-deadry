@@ -1,9 +1,9 @@
 package com.mycompany.pokemon;
 
-public abstract class Abra extends Pokemon implements IPsiquico {
+public class Abra extends Pokemon implements IPsiquico {
 
     public Abra(String nombre, int salud, int PuntosdeAtaque, TipoPokemon tipo, Estado estado) {
-        super(nombre, salud, PuntosdeAtaque, tipo, estado);
+    super(nombre, salud, PuntosdeAtaque, TipoPokemon.PSIQUICO, Estado.NORMAL);
     }
 
     @Override
@@ -14,6 +14,7 @@ public abstract class Abra extends Pokemon implements IPsiquico {
     public void vida(){
     salud=25;
     }
+    
      @Override
     public void entrenar() {
         this.PuntosdeAtaque += 5;

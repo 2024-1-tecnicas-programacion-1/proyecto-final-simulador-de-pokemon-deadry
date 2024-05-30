@@ -4,7 +4,7 @@ package com.mycompany.pokemon;
 import java.io.Serializable;
 
 public enum TipoPokemon implements Serializable{
-    FUEGO, AGUA, VENENO, ELECTRICO, PSIQUICO, TIERRA, VOLADOR, HADA, LUCHA;
+    FUEGO, AGUA, VENENO, ELECTRICO, PSIQUICO, TIERRA, VOLADOR, HADA, LUCHA,Electrico,Planta,Fuego;
     
     private static int [][] tablaDeDano={
         {1, 1, 2, 2, 2, 4, 2, 2, 2},
