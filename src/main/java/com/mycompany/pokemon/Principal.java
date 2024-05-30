@@ -187,7 +187,7 @@ public class Principal {
         int opcionPokemones;
     do {
         System.out.println("Seleccione una de las siguientes opciones:");
-        System.out.println("1) Ver todos los pokemones registrados");
+        System.out.println("1) Ver todos los pokemones disponibles");
         System.out.println("2) Volver al menú principal");
         opcionPokemones = sc.nextInt();
 
