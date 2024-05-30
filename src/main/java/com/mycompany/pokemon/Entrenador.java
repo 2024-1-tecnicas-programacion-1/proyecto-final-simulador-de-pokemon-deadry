@@ -18,7 +18,6 @@ public class Entrenador {
         pokemones.add(pokemon);
     }
 
-    
     public void entrenarPokemon(Pokemon pokemon) {
         if (pokemones.contains(pokemon)) {
             pokemon.entrenar();
@@ -29,7 +28,7 @@ public class Entrenador {
 
     public void mostrarPokemones() {
         if (pokemones.isEmpty()) {
-            System.out.println("El entrenador no tiene Pokémons.");
+            System.out.println("El entrenador no tiene Pokémones.");
         } else {
             for (Pokemon pokemon : pokemones) {
                 System.out.println(pokemon);

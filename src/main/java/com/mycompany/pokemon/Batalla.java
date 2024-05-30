@@ -2,6 +2,14 @@ package com.mycompany.pokemon;
 
 public class Batalla {
 
+    private Entrenador entrenador1;
+    private Entrenador entrenador2;
+    
+    public Batalla(Entrenador entrenador1, Entrenador entrenador2) {
+        this.entrenador1 = entrenador1;
+        this.entrenador2 = entrenador2;
+    }
+
     public void iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2) {
         System.out.println("¡La batalla entre " + pokemon1.getNombre() + " y " + pokemon2.getNombre() + " ha comenzado!");
 
@@ -31,6 +39,7 @@ public class Batalla {
         } else {
             System.out.println(atacante.getNombre() + " no puede atacar porque está en estado " + atacante.getEstado());
         }
+    }    
     }
-}
+
 

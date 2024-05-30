@@ -1,5 +1,4 @@
 package com.mycompany.pokemon;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -19,7 +18,7 @@ public class Principal {
             System.out.println("**/////////////////////**");
             System.out.println("Ingrese alguna de las siguientes opciones:");
             System.out.println("1) Gestionar entrenadores");
-            System.out.println("2) Gestionar Pokemones");
+            System.out.println("2) Pokemones disponibles");
             System.out.println("3) Iniciar Batalla");
             System.out.println("4) Salir");
             opcion = sc.nextInt();
@@ -88,29 +87,68 @@ public class Principal {
                                     break;
                                 case 2:
                                     System.out.println("Pokémons disponibles:");
-                                    for (int i = 0; i < pokemones.size(); i++) {
-                                        System.out.println((i + 1) + ") " + pokemones.get(i).getNombre());
-                                    }
+                                    System.out.println("1) Charmander");
+                                    System.out.println("2) Squirtle");
+                                    System.out.println("3) Bulbasaur");
+                                    System.out.println("4) Pikachu");
+                                    System.out.println("5) Abra");
+                                    System.out.println("6) Geodude");
+                                    System.out.println("7) Pidgey");
+                                    System.out.println("8) Jigglypuff");
+                                    System.out.println("9) Machop");
+                                    System.out.println("10) Grimer");
 
                                     System.out.println("Seleccione un Pokémon para agregar al equipo:");
-                                    for (int i = 0; i < pokemones.size(); i++) {
-                                    System.out.println((i + 1) + ") " + pokemones.get(i).getNombre());
-                                    }
-                                    
                                     int opcionPokemon = sc.nextInt();
-                                    if (opcionPokemon >= 1 && opcionPokemon <= pokemones.size()) {
-                                        Pokemon pokemonSeleccionado = pokemones.get(opcionPokemon - 1);
+
+                                    Pokemon pokemonSeleccionado = null;
+
+                                    switch (opcionPokemon) {
+                                        case 1:
+                                            pokemonSeleccionado = new Charmander("Charmander", 39, 52, TipoPokemon.FUEGO, Estado.NORMAL);
+                                            break;
+                                        case 2:
+                                            pokemonSeleccionado = new Squirtle("Squirtle", 44, 48, TipoPokemon.AGUA, Estado.NORMAL);
+                                            break;
+                                        case 3:
+                                            pokemonSeleccionado = new Bulbasaur("Bulbasaur", 45, 49, TipoPokemon.VENENO, Estado.NORMAL);
+                                            break;
+                                        case 4:
+                                            pokemonSeleccionado = new Pikachu("Pikachu", 35, 55, TipoPokemon.ELECTRICO, Estado.NORMAL);
+                                            break;
+                                        case 5:
+                                            pokemonSeleccionado = new Abra("Abra", 25, 20, TipoPokemon.PSIQUICO, Estado.NORMAL);
+                                            break;
+                                        case 6:
+                                            pokemonSeleccionado = new Geodude("Geodude", 40, 80, TipoPokemon.TIERRA, Estado.NORMAL);
+                                            break;
+                                        case 7:
+                                            pokemonSeleccionado = new Pidgey("Pidgey", 40, 45, TipoPokemon.VOLADOR, Estado.NORMAL);
+                                            break;
+                                        case 8:
+                                            pokemonSeleccionado = new Jigglypuff("Jigglypuff", 115, 45, TipoPokemon.HADA, Estado.NORMAL);
+                                            break;
+                                        case 9:
+                                            pokemonSeleccionado = new Machop("Machop", 70, 80, TipoPokemon.LUCHA, Estado.NORMAL);
+                                            break;
+                                        case 10:
+                                            pokemonSeleccionado = new Grimer("Grimer", 80, 80, TipoPokemon.VENENO, Estado.NORMAL);
+                                            break;
+                                        default:
+                                            System.out.println("Opción inválida. Por favor, seleccione un Pokémon de la lista.");
+                                            break;
+                                    }
+
+                                    if (pokemonSeleccionado != null) {
                                         entrenadorSeleccionado.agregarPokemon(pokemonSeleccionado);
-                                        System.out.println("Pokémon " + pokemonSeleccionado.getNombre() + " agregado al equipo de " + entrenadorSeleccionado.getNombre());
-                                    } else {
-                                        System.out.println("Opción inválida. Por favor, seleccione un Pokémon de la lista.");
+                                        System.out.println(pokemonSeleccionado.getNombre() + " agregado al equipo de " + entrenadorSeleccionado.getNombre() + ".");
                                     }
                                     break;
                                 case 3:
                                     System.out.println("Equipo de " + entrenadorSeleccionado.getNombre() + ":");
                                     entrenadorSeleccionado.mostrarPokemones();
+                                    
 
-                                    // Seleccionar un Pokémon para entrenar
                                     System.out.println("Seleccione un Pokémon para entrenar:");
                                     int opcionEntrenar = sc.nextInt();
                                     if (opcionEntrenar >= 1 && opcionEntrenar <= entrenadorSeleccionado.getPokemones().size()) {
@@ -145,89 +183,37 @@ public class Principal {
     }
 
     public static void gestionarPokemones(Scanner sc) {
+        
         int opcionPokemones;
-        do {
-            System.out.println("Seleccione una de las siguientes opciones:");
-            System.out.println("1) Ver todos los pokemones registrados");
-            System.out.println("2) Registrar pokémon");
-            System.out.println("3) Volver al menú principal");
-            opcionPokemones = sc.nextInt();
+    do {
+        System.out.println("Seleccione una de las siguientes opciones:");
+        System.out.println("1) Ver todos los pokemones registrados");
+        System.out.println("2) Volver al menú principal");
+        opcionPokemones = sc.nextInt();
 
-            switch (opcionPokemones) {
-                case 1:
-                    for (Pokemon pokemon : pokemones) {
-                        System.out.println(pokemon);
-                    }
-                    break;
-                case 2:
-                    System.out.print("Ingrese el nombre del pokémon: ");
-                    sc.nextLine();
-                    String nombrePokemon = sc.nextLine();
-
-                    System.out.print("Ingrese la salud del pokémon: ");
-                    int salud = sc.nextInt();
-
-                    System.out.print("Ingrese los puntos de ataque del pokémon: ");
-                    int puntosDeAtaque = sc.nextInt();
-                    sc.nextLine();
-
-                    System.out.println("Tipo de Pokémon (1- Psíquico, 2- Agua, 3- Fuego, 4- Planta, 5- Eléctrico, 6- Hada, 7- Lucha, 8- Tierra, 9- Veneno, 10- Volador): ");
-
-                    int tipo = sc.nextInt();
-                    sc.nextLine();
-
-                    System.out.println("Estado del Pokémon (1) Normal, (2) Debilitado): ");
-                    int estadoSeleccionado = sc.nextInt();
-                    sc.nextLine();
-                    Estado estado;
-                    if (estadoSeleccionado == 1) {
-                        estado = Estado.NORMAL;
-                    } else {
-                        estado = Estado.DEBILITADO;
-                    }
-
-                    TipoPokemon tipoPokemon;
-                    Pokemon nuevoPokemon = null;
-                    switch (tipo) {
-                        case 1:
-                            tipoPokemon = TipoPokemon.PSIQUICO;
-                            nuevoPokemon = new Psiquico(nombrePokemon, salud, puntosDeAtaque, tipoPokemon, estado);
-                            break;
-                        case 2:
-                            tipoPokemon = TipoPokemon.AGUA;
-                            nuevoPokemon = new Agua(nombrePokemon, salud, puntosDeAtaque, tipoPokemon, estado);
-                            break;
-                        case 3:
-                            tipoPokemon = TipoPokemon.FUEGO;
-                            nuevoPokemon = new Fuego(nombrePokemon, salud, puntosDeAtaque, tipoPokemon, estado);
-                            break;
-                        case 4:
-                            tipoPokemon = TipoPokemon.Planta;
-                            nuevoPokemon = new planta(nombrePokemon, salud, puntosDeAtaque, tipoPokemon, estado);
-                            break;
-                        case 5:
-                            tipoPokemon = TipoPokemon.ELECTRICO;
-                            nuevoPokemon = new Electrico(nombrePokemon, salud, puntosDeAtaque, tipoPokemon, estado);
-                            break;
-                        default:
-                            System.out.println("Tipo de Pokémon inválido.");
-                    }
-
-                    if (nuevoPokemon != null) {
-                        pokemones.add(nuevoPokemon);
-                        System.out.println("Pokémon registrado exitosamente.");
-                    }
-                    break;
-                case 3:
-                    System.out.println("Volviendo al menú principal...");
-                    break;
-                default:
-                    System.out.println("Usted ingresó una opción inválida");
+        switch (opcionPokemones) {
+            case 1:
+                System.out.println("Pokémons disponibles:");
+                System.out.println("1) Charmander");
+                System.out.println("2) Squirtle");
+                System.out.println("3) Bulbasaur");
+                System.out.println("4) Pikachu");
+                System.out.println("5) Abra");
+                System.out.println("6) Geodude");
+                System.out.println("7) Pidgey");
+                System.out.println("8) Jigglypuff");
+                System.out.println("9) Machop");
+                System.out.println("10) Grimer");
+                break;
+            case 2:
+                System.out.println("Volviendo al menú principal...");
+                break;
+            default:
+                System.out.println("Usted ingresó una opción inválida");
+                break;
             }
-
-        } while (opcionPokemones != 3);
-    }
-
+        } while (opcionPokemones != 2);
+    }   
     public static void iniciarBatalla(Scanner sc) {
         int opcionBatalla;
         Entrenador entrenador1 = null;
@@ -246,35 +232,59 @@ public class Principal {
 
             switch (opcionBatalla) {
                 case 1:
-                    System.out.println("Elegir entrenador 1:");
-                    entrenador1 = seleccionarEntrenador(sc);
+                    System.out.println("Ingrese el nombre del primer entrenador:");
+                    sc.nextLine(); // Consume el salto de línea
+                    String nombreEntrenador1 = sc.nextLine();
+                    entrenador1 = buscarEntrenador(nombreEntrenador1);
+                    if (entrenador1 == null) {
+                        System.out.println("Entrenador no encontrado.");
+                    }
                     break;
                 case 2:
-                    System.out.println("Elegir entrenador 2:");
-                    entrenador2 = seleccionarEntrenador(sc);
+                    System.out.println("Ingrese el nombre del segundo entrenador:");
+                    sc.nextLine(); // Consume el salto de línea
+                    String nombreEntrenador2 = sc.nextLine();
+                    entrenador2 = buscarEntrenador(nombreEntrenador2);
+                    if (entrenador2 == null) {
+                        System.out.println("Entrenador no encontrado.");
+                    }
                     break;
                 case 3:
                     if (entrenador1 != null) {
-                        System.out.println("Seleccionar Pokémon de entrenador 1:");
-                        pokemon1 = seleccionarPokemon(sc, entrenador1);
+                        System.out.println("Seleccione un Pokémon para el primer entrenador:");
+                        entrenador1.mostrarPokemones();
+                        int opcionPokemon1 = sc.nextInt();
+                        if (opcionPokemon1 >= 1 && opcionPokemon1 <= entrenador1.getPokemones().size()) {
+                            pokemon1 = entrenador1.getPokemones().get(opcionPokemon1 - 1);
+                            System.out.println("Pokémon " + pokemon1.getNombre() + " seleccionado para el primer entrenador.");
+                        } else {
+                            System.out.println("Opción inválida. Por favor, seleccione un Pokémon de la lista.");
+                        }
                     } else {
-                        System.out.println("Primero elija entrenador 1.");
+                        System.out.println("Primero seleccione al primer entrenador.");
                     }
                     break;
                 case 4:
                     if (entrenador2 != null) {
-                        System.out.println("Seleccionar Pokémon de entrenador 2:");
-                        pokemon2 = seleccionarPokemon(sc, entrenador2);
+                        System.out.println("Seleccione un Pokémon para el segundo entrenador:");
+                        entrenador2.mostrarPokemones();
+                        int opcionPokemon2 = sc.nextInt();
+                        if (opcionPokemon2 >= 1 && opcionPokemon2 <= entrenador2.getPokemones().size()) {
+                            pokemon2 = entrenador2.getPokemones().get(opcionPokemon2 - 1);
+                            System.out.println("Pokémon " + pokemon2.getNombre() + " seleccionado para el segundo entrenador.");
+                        } else {
+                            System.out.println("Opción inválida. Por favor, seleccione un Pokémon de la lista.");
+                        }
                     } else {
-                        System.out.println("Primero elija entrenador 2.");
+                        System.out.println("Primero seleccione al segundo entrenador.");
                     }
                     break;
                 case 5:
-                    if (pokemon1 != null && pokemon2 != null) {
-                        System.out.println(pokemon1.getNombre() + " vs. " + pokemon2.getNombre());
-                        gestionarBatalla(sc, pokemon1, pokemon2);
+                    if (entrenador1 != null && entrenador2 != null && pokemon1 != null && pokemon2 != null) {
+                        Batalla batalla = new Batalla(entrenador1, entrenador2);
+                        batalla.iniciarBatalla(pokemon1, pokemon2);
                     } else {
-                        System.out.println("Debe seleccionar un Pokémon para cada entrenador antes de comenzar la batalla.");
+                        System.out.println("Seleccione los entrenadores y sus Pokémon antes de iniciar la batalla.");
                     }
                     break;
                 case 6:
@@ -287,58 +297,7 @@ public class Principal {
         } while (opcionBatalla != 6);
     }
 
-    public static void gestionarBatalla(Scanner sc, Pokemon pokemon1, Pokemon pokemon2) {
-        int opcionAccion;
-        do {
-            System.out.println("Elige una opción:");
-            System.out.println("1) [Pokémon 1] Atacar");
-            System.out.println("2) [Pokémon 2] Atacar");
-            System.out.println("3) Finalizar la batalla");
-            opcionAccion = sc.nextInt();
-
-            switch (opcionAccion) {
-                case 1:
-                    System.out.println("[Pokémon 1] ataca");
-                    if (pokemon1.getEstado() == Estado.NORMAL) {
-                        int danio1 = pokemon1.getPuntosDeAtaque();
-                        pokemon2.recibirDaño(danio1);
-                        System.out.println(pokemon1.getNombre() + " ataca a " + pokemon2.getNombre() + " y causa " + danio1 + " de daño.");
-                        if (pokemon2.getEstado() == Estado.DEBILITADO) {
-                            System.out.println(pokemon2.getNombre() + " ha sido debilitado. Salud restante: " + pokemon2.getSalud());
-                        } else {
-                            System.out.println(pokemon2.getNombre() + " tiene " + pokemon2.getSalud() + " de salud restante.");
-                        }
-                    } else {
-                        System.out.println(pokemon1.getNombre() + " no puede atacar porque está en estado " + pokemon1.getEstado());
-                    }
-                    break;
-                case 2:
-
-                    System.out.println("[Pokémon 2] ataca");
-                    if (pokemon2.getEstado() == Estado.NORMAL) {
-                        int danio1 = pokemon1.getPuntosDeAtaque();
-                        pokemon1.recibirDaño(danio1);
-                        System.out.println(pokemon2.getNombre() + " ataca a " + pokemon1.getNombre() + " y causa " + danio1 + " de daño.");
-                        if (pokemon1.getEstado() == Estado.DEBILITADO) {
-                            System.out.println(pokemon2.getNombre() + " ha sido debilitado. Salud restante: " + pokemon1.getSalud());
-                        } else {
-                            System.out.println(pokemon2.getNombre() + " tiene " + pokemon1.getSalud() + " de salud restante.");
-                        }
-                    } else {
-                        System.out.println(pokemon2.getNombre() + " no puede atacar porque está en estado " + pokemon2.getEstado());
-                    }
-                    break;
-                case 3:
-                    System.out.println("Finalizando la batalla...");
-                    break;
-                default:
-                    System.out.println("Usted ingresó una opción inválida");
-            }
-
-        } while (opcionAccion != 3);
-    }
-
-    private static Entrenador buscarEntrenador(String nombre) {
+    public static Entrenador buscarEntrenador(String nombre) {
         for (Entrenador entrenador : entrenadores) {
             if (entrenador.getNombre().equalsIgnoreCase(nombre)) {
                 return entrenador;

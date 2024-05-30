@@ -1,6 +1,6 @@
 package com.mycompany.pokemon;
 
-public abstract class Bulbasaur extends Pokemon implements IVeneno, IPlanta {
+public class Bulbasaur extends Pokemon implements IVeneno, IPlanta {
 
     public Bulbasaur(String nombre, int salud, int PuntosdeAtaque, TipoPokemon tipo, Estado estado) {
         super(nombre, salud, PuntosdeAtaque, tipo, estado);
@@ -21,4 +21,16 @@ public abstract class Bulbasaur extends Pokemon implements IVeneno, IPlanta {
         System.out.println(this.nombre + " ha sido entrenado. Puntos de ataque aumentados a " + this.PuntosdeAtaque);
         System.out.println(this.nombre + " ha sido entrenado. Salud aumentada a " + this.salud);
     }
+
+    @Override
+    public void AtaquePlanta() {
+        PuntosdeAtaque=49;
+    }
+
+    @Override
+    public void Vida() {
+        salud=45;
+    }
+
+    
 }
